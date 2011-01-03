@@ -31,7 +31,7 @@ public class ClientConverter implements CsvDataConverter<Client> {
 
 	@Override
 	public boolean canHandle(List<String> headers) {
-		return headers.containsAll(Arrays.asList("Nome", "Idade"));
+		return headers.containsAll(Arrays.asList("Name", "Age"));
 	}
 
 }
