@@ -1,29 +1,20 @@
 package prixma.csv.example;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import com.csvreader.CsvReader;
-
 import prixma.csv.datamapper.CsvDataConverter;
-import prixma.csv.exceptions.CsvConvertException;
+import prixma.csv.datamapper.CsvFileRow;
 
 public class ClientConverter implements CsvDataConverter<Client> {
 
 	@Override
-	public Client convertRow(CsvReader reader) {
+	public Client convert(CsvFileRow row) {
 		
 		Client client = new Client();
-		
-		try {
 			
-			client.setName(reader.get("Name"));
-			client.setAge(Integer.parseInt(reader.get("Age")));
-		
-		} catch (IOException e) {
-			throw new CsvConvertException(e);
-		}
+		client.setName(row.get("Name"));
+		client.setAge(row.getInt("Age"));
 		
 		return client;
 		

@@ -86,7 +86,7 @@ public class CsvDataMapper<T> implements Iterator<T> {
 	public T next() {
 	
 		count++;
-		return converter.convertRow(reader);
+		return converter.convert(new CsvFileRow(reader));
 		
 	}
 
