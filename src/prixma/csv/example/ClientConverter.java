@@ -1,9 +1,7 @@
 package prixma.csv.example;
 
-import java.util.Arrays;
-import java.util.List;
-
 import prixma.csv.datamapper.CsvDataConverter;
+import prixma.csv.datamapper.CsvFile;
 import prixma.csv.datamapper.CsvFileRow;
 
 public class ClientConverter implements CsvDataConverter<Client> {
@@ -19,10 +17,9 @@ public class ClientConverter implements CsvDataConverter<Client> {
 		return client;
 		
 	}
-
-	@Override
-	public boolean canHandle(List<String> headers) {
-		return headers.containsAll(Arrays.asList("Name", "Age"));
+	
+	public boolean canHandle(CsvFile file) {
+		return file.containsHeaders("Name", "Age");
 	}
 
 }

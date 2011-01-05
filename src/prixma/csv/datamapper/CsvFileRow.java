@@ -1,38 +1,27 @@
 package prixma.csv.datamapper;
 
-import java.io.IOException;
-
-import prixma.csv.exceptions.CsvConvertException;
-
-import com.csvreader.CsvReader;
 
 public class CsvFileRow {
 	
-	private final CsvReader reader;
+	private final CsvFile file;
 
-	public CsvFileRow(CsvReader reader) {
-		this.reader = reader;
+	public CsvFileRow(CsvFile file) {
+		this.file = file;
 	}
 	
 	public String get(String column){
-		return read(column);
+		return file.read(column);
 	}
 	
 	public int getInt(String column){
-		return Integer.valueOf(read(column));
+		return Integer.valueOf(file.read(column));
 	}
 	
 	public boolean getBool(String column){
-		return Boolean.valueOf(read(column));
+		return Boolean.valueOf(file.read(column));
 	}
 	
-	private String read(String column){
-		try {
-			return reader.get(column);
-		} catch (IOException e) {
-			throw new CsvConvertException(e);
-		}
-	}
+	
 	
 	
 
