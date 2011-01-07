@@ -1,17 +1,16 @@
 package prixma.csv.datamapper;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Iterator;
 
 import prixma.csv.exceptions.CsvFormatException;
 
-public class CsvDataProcessor<T> implements Iterator<T> {
+public class CsvIterator<T> implements Iterator<T> {
 	
 	private CsvFile file;
 	private CsvDataConverter<T> converter;
 
-	public CsvDataProcessor(File file, CsvDataConverter<T> converter){
+	public CsvIterator(File file, CsvDataConverter<T> converter){
 		
 		this.file = new CsvFile(file);
 		
@@ -22,7 +21,7 @@ public class CsvDataProcessor<T> implements Iterator<T> {
 			throw new CsvFormatException("Converter " + converter.getClass().getName() + " can't handle file");
 	}
 	
-	public CsvDataProcessor(String filename, CsvDataConverter<T> converter) throws FileNotFoundException{
+	public CsvIterator(String filename, CsvDataConverter<T> converter) {
 		this(new File(filename), converter);
 	}
 	
@@ -40,8 +39,5 @@ public class CsvDataProcessor<T> implements Iterator<T> {
 	public void remove() {
 		throw new RuntimeException("Illegal Operation");
 	}
-	
-
-	
 
 }
