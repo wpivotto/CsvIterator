@@ -9,7 +9,8 @@ public class ClientProcessor {
 	
 	public static void main(String[] args){
 		
-		Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", new ClientConverter());
+		//Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", new ClientConverter());
+		Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", Client.class);
 		
 		while (iterator.hasNext()) {
 			

@@ -51,6 +51,10 @@ public class CsvFile {
 		
 	}
 	
+	public List<String> getHeaders(){
+		return this.headers;
+	}
+	
 	public boolean EOF(){
 		
 		try {
