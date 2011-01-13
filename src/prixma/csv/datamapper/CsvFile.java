@@ -14,6 +14,9 @@ import prixma.csv.exceptions.CsvReadException;
 
 import com.csvreader.CsvReader;
 
+/**
+ * @author William Pivotto
+ */
 public class CsvFile {
 	
 	private CsvReader reader;

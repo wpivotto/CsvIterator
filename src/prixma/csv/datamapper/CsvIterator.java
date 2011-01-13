@@ -5,6 +5,9 @@ import java.util.Iterator;
 
 import prixma.csv.exceptions.CsvFormatException;
 
+/**
+ * @author William Pivotto
+ */
 public class CsvIterator<T> implements Iterator<T> {
 	
 	private CsvFile file;

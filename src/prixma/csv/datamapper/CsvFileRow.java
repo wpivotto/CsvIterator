@@ -1,6 +1,8 @@
 package prixma.csv.datamapper;
 
-
+/**
+ * @author William Pivotto
+ */
 public class CsvFileRow {
 	
 	private final CsvFile file;

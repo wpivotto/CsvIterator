@@ -1,6 +1,8 @@
 package prixma.csv.exceptions;
 
-
+/**
+ * @author William Pivotto
+ */
 public class CsvReadException extends RuntimeException {
 
 	private static final long serialVersionUID = -2549340448669717500L;
