@@ -9,8 +9,12 @@ public class ClientProcessor {
 	
 	public static void main(String[] args){
 		
-		//Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", new ClientConverter());
-		Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", Client.class);
+		print(new CsvIterator<Client>("./clients.CSV", new ClientConverter()));
+		print(new CsvIterator<Client>("./clients.CSV", Client.class));
+	
+	}
+	
+	public static void print(Iterator<Client> iterator) {
 		
 		while (iterator.hasNext()) {
 			
@@ -18,7 +22,7 @@ public class ClientProcessor {
 			System.out.println(client.getName());
 			
 		}
-	
+		
 	}
 
 }
