@@ -49,14 +49,20 @@
 	public class ClientProcessor {
 		
 		public static void main(String[] args){
-			
+		
 			Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", new ClientConverter());
-			
+			print(iterator);
+		
+			iterator = new CsvIterator<Client>("./clients.CSV", Client.class);
+			print(iterator);
+	
+		}
+	
+		public static void print(Iterator<Client> iterator) {
+		
 			while (iterator.hasNext()) {
-				
 				Client client = iterator.next();
 				System.out.println(client.getName());
-				
 			}
 		}
 	}

@@ -3,6 +3,7 @@ package prixma.csv.datamapper;
 import java.io.File;
 import java.util.Iterator;
 
+import prixma.csv.converter.CsvDataConverter;
 import prixma.csv.converter.GenericConverter;
 import prixma.csv.exceptions.CsvFormatException;
 
@@ -39,7 +40,7 @@ public class CsvIterator<T> implements Iterator<T> {
 	
 	@Override
 	public boolean hasNext() {
-		return file.EOF();
+		return !file.EOF();
 	}
 
 	@Override

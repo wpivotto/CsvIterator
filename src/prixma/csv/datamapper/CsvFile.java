@@ -29,7 +29,6 @@ public class CsvFile {
 			reader = new CsvReader(new FileInputStream(file), Charset.defaultCharset());
 			reader.setSafetySwitch(true);
 			reader.setSkipEmptyRecords(true);
-			//reader.setDelimiter(delimiter);
 			readHeaders();
 			
 			
@@ -60,13 +59,13 @@ public class CsvFile {
 		try {
 			if(!reader.readRecord()){
 				reader.close();
-				return false;
+				return true;
 			}
 			else 
-				return true;
+				return false;
 		} catch (IOException e) {
 			e.printStackTrace();
-			return false;
+			return true;
 		}
 		
 	}
@@ -90,13 +89,20 @@ public class CsvFile {
 	
 	
 	
-	public String read(String column){
+	public String read(String columnName){
+		try {
+			return reader.get(columnName);
+		} catch (IOException e) {
+			throw new CsvConvertException(e);
+		}
+	}
+	
+	public String read(int column){
 		try {
 			return reader.get(column);
 		} catch (IOException e) {
 			throw new CsvConvertException(e);
 		}
 	}
-	
 
 }

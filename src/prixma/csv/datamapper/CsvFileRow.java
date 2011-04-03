@@ -13,7 +13,11 @@ public class CsvFileRow {
 		this.file = file;
 	}
 	
-	public String get(String column){
+	public String get(String columnName){
+		return file.read(columnName);
+	}
+	
+	public String get(int column){
 		return file.read(column);
 	}
 	
@@ -44,11 +48,19 @@ public class CsvFileRow {
 		
 	}
 	
-	public int getInt(String column){
+	public int getInt(String columnName){
+		return Integer.valueOf(file.read(columnName));
+	}
+	
+	public int getInt(int column){
 		return Integer.valueOf(file.read(column));
 	}
 	
-	public boolean getBool(String column){
+	public boolean getBool(String columnName){
+		return Boolean.valueOf(file.read(columnName));
+	}
+	
+	public boolean getBool(int column){
 		return Boolean.valueOf(file.read(column));
 	}
 	

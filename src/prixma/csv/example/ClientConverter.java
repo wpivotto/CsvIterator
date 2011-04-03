@@ -1,6 +1,6 @@
 package prixma.csv.example;
 
-import prixma.csv.datamapper.CsvDataConverter;
+import prixma.csv.converter.CsvDataConverter;
 import prixma.csv.datamapper.CsvFile;
 import prixma.csv.datamapper.CsvFileRow;
 

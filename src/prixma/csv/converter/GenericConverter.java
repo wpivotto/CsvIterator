@@ -3,7 +3,6 @@ package prixma.csv.converter;
 import java.lang.reflect.Field;
 
 import net.vidageek.mirror.dsl.Mirror;
-import prixma.csv.datamapper.CsvDataConverter;
 import prixma.csv.datamapper.CsvFile;
 import prixma.csv.datamapper.CsvFileRow;
 

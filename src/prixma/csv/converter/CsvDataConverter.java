@@ -1,4 +1,7 @@
-package prixma.csv.datamapper;
+package prixma.csv.converter;
+
+import prixma.csv.datamapper.CsvFile;
+import prixma.csv.datamapper.CsvFileRow;
 
 /**
  * Convert a row to an object
