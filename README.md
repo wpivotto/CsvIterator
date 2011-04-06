@@ -23,7 +23,7 @@
 			
 	}
 
-## Create your coverter
+## Create your converter
 
 	public class ClientConverter implements CsvDataConverter<Client> {
 	
@@ -53,7 +53,7 @@
 			Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", new ClientConverter());
 			print(iterator);
 		
-			iterator = new CsvIterator<Client>("./clients.CSV", Client.class);
+			iterator = new CsvIterator<Client>("./clients.CSV", Client.class); //generic converter
 			print(iterator);
 	
 		}
