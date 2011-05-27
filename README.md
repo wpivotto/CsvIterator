@@ -46,25 +46,30 @@
 
 ## Now you can iterate over an csv file, like this
 
-	public class ClientProcessor {
+	CsvProcessor<Client> processor = new CsvProcessor<Client>("./clients.csv", new ClientConverter());
 		
-		public static void main(String[] args){
+	for(Client client : processor){
+		System.out.println(client.getName());
+	}
 		
-			Iterator<Client> iterator = new CsvIterator<Client>("./clients.CSV", new ClientConverter());
-			print(iterator);
+	processor = new CsvProcessor<Client>("./clients.csv", Client.class);
 		
-			iterator = new CsvIterator<Client>("./clients.CSV", Client.class); //generic converter
-			print(iterator);
-	
-		}
-	
-		public static void print(Iterator<Client> iterator) {
+	for(Client client : processor){
+		System.out.println(client.getName());
+	}
 		
-			while (iterator.hasNext()) {
-				Client client = iterator.next();
-				System.out.println(client.getName());
-			}
-		}
+	Iterator<Client> iterator = new CsvIterator<Client>("./clients.csv", new ClientConverter());
+		
+	while (iterator.hasNext()) {
+		Client client = iterator.next();
+		System.out.println(client.getName());
+	}
+		
+	iterator = new CsvIterator<Client>("./clients.CSV", Client.class);
+
+	while (iterator.hasNext()) {
+		Client client = iterator.next();
+		System.out.println(client.getName());
 	}
 
 
